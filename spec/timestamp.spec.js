@@ -1,9 +1,10 @@
-const {getCurrentTimestamp} = require("../timestamp.js");
+const Timestamp = require("../timestamp.js");
 
 describe("Timestamp test suite",function(){
 
   describe("Expectations for Get current timestamp",function(){
-    let result = getCurrentTimestamp();
+    let timestamp = new Timestamp();
+    let result = timestamp.getCurrent();
 
     it("function should return JSON object",function(){
       expect(result).not.toBe(null);

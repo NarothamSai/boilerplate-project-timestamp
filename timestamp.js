@@ -1,4 +1,8 @@
-function getCurrentTimestamp(){
+function Timestamp(date){
+  this.date = date;
+}
+
+Timestamp.prototype.getCurrent = function(){
   let timestamp = {};
   
   let date = new Date();
@@ -8,6 +12,4 @@ function getCurrentTimestamp(){
   return timestamp;
 }
 
-module.exports = {
-  getCurrentTimestamp
-};
+module.exports = Timestamp;

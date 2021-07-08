@@ -22,18 +22,21 @@ The frontend and backend is forked from freecodecamp bolierpate. Added two API e
 
 1. Get current timestamp
 
-`GET /api 
+```
+GET /api 
 Response: 
 status code: 200 
 Body:
 {
   "unix": 1624685327000,
   "utc": "Saturday, 26 June 2021 10:58:47 GMT"
-}`
+}
+```
 
 2. Get timestamp of given date
 
-`GET /api/:date
+```
+GET /api/:date
 Response:
 status code : 200
 Body:
@@ -44,4 +47,4 @@ Body:
 {
   "error": "Invalid Date"
 }
-`
+```

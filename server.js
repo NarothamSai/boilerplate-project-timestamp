@@ -17,15 +17,12 @@ app.use(express.static('public'));
 app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
+const {getCurrentTimestamp} = require("./timestamp.js");
 
 app.get("/api/",function(req,res){
 
-  let response = {};
+  let response = getCurrentTimestamp();
   
-  let date = new Date();
-  response.unix = date.valueOf();
-  response.utc = date.toUTCString();
-
   res.send(response);
 });
 

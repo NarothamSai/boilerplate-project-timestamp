@@ -29,20 +29,10 @@ app.get("/api/",function(req,res){
 
 app.get("/api/:date",function(req,res){
   let {date} = req.params;
-  let response = {};
 
-  if(!isNaN(date)){
-    date = parseInt(date);
-  }
+  let timestamp = new Timestamp();
 
-  date = new Date(date);
-
-  if(isInvalidDate(date)){
-    response.error = "Invalid Date"
-  }else{
-    response.unix = date.valueOf();
-    response.utc = date.toUTCString();
-  }
+  let response = timestamp.getFromDate(date);
 
   res.send(response);
 });
